@@ -1,0 +1,28 @@
+sre-project/
+├── README.md
+├── LICENSE
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── docs/
+│   ├── architecture.md
+│   └── runbooks/
+│       └── incident-response.md
+├── infrastructure/
+│   ├── terraform/
+│   └── ansible/
+├── monitoring/
+│   ├── prometheus/
+│   └── grafana/
+├── scripts/
+│   ├── backups/
+│   └── maintenance/
+├── incidents/
+│   └── 2025-05-30-db-outage.md
+├── slos/
+│   └── web-service.yaml
+├── tests/
+│   ├── integration/
+│   └── unit/
+└── tools/
+    └── custom-scripts/
