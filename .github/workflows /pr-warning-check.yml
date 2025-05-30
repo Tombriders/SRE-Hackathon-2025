@@ -1,0 +1,28 @@
+name: PR Warning Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  check-warning:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set warning if needed
+        uses: LouisBrunner/checks-action@v1.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Manual Review Required
+          conclusion: action_required
+          status: completed
+          output: |
+            {
+              "title": "⚠️ Manual review needed",
+              "summary": "Changes may impact critical modules",
+              "text": "This PR modifies `payments`. A manual review is strongly recommended."
+            }
+          action_url: https://github.com/${{ github.repository }}/pull/${{ github.event.pull_request.number }}
